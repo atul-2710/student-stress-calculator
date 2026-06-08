@@ -14,7 +14,11 @@ def home():
         study_load=int(request.form.get('study-load'))
         extracurricular=int(request.form.get('extracurricular'))
 
-        
+        X=[[sleep_quality,headache,academic_perf,study_load,extracurricular]]
+
+        prediction=model.predict(X)
+        stress=prediction[0]
+    return render_template('index.html',stress=stress)
         
 
 if __name__=='__main__':
