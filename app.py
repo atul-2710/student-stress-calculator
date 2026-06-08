@@ -1,10 +1,21 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request,flash
+import joblib
+model=joblib.load("stress-calculator.joblib")
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/",methods=['GET','POST'])
 def home():
-    return render_template('index.html')
+    if request.method=='POST':
+        #getting data from the form
+        sleep_quality=int(request.form.get('sleep-quality'))
+        headache=int(request.form.get('headaches'))
+        academic_perf=int(request.form.get('academic-performance'))
+        study_load=int(request.form.get('study-load'))
+        extracurricular=int(request.form.get('extracurricular'))
+
+        
+        
 
 if __name__=='__main__':
     app.run(debug=True)
