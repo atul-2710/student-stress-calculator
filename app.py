@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request,flash
+from flask import Flask, render_template, request,jsonify
 import joblib
 model=joblib.load("stress-calculator.joblib")
 
@@ -18,7 +18,8 @@ def home():
 
         prediction=model.predict(X)
         stress=prediction[0]
-    return render_template('index.html',stress=stress)
+        return jsonify({'stress_prediction' : stress})
+    return render_template('index.html')
         
 
 if __name__=='__main__':
