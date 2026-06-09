@@ -81,6 +81,28 @@ body {
   gap: 1.2rem;
 }
 
+.disclaimer-box {
+  margin-top: 2rem;
+  padding: 1.2rem;
+  background-color: #eef7fa;
+  border: 2px solid var(--color-frostbite);
+  border-radius: 8px;
+}
+
+.disclaimer-box p {
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  color: var(--color-polar-night);
+  text-align: justify;
+  font-weight: 500;
+}
+
+.disclaimer-box strong {
+  color: #d32f2f;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 /* ==========================================================================
    4. FORM INPUT FIELDS
    ========================================================================== */
@@ -180,4 +202,31 @@ body {
   border-color: var(--color-deep-glacier);
   cursor: pointer;
   transform: translateY(-2px); /* Sleek modern lift effect */
+}
+
+/* ==========================================================================
+   6. Display of result
+   ========================================================================== */
+
+#result-box {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  display: none; /* Stays hidden until JS fetches the prediction */
+}
+
+#result-box.low-stress {
+  display: block;
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+#result-box.high-stress {
+  display: block;
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
 }
