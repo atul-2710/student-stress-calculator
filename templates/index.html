@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/static/style.css" />
@@ -8,54 +14,140 @@
   </head>
   <body>
     <div class="container">
-      <h1>Student Stress Calculator</h1>
+      <h1 class="bebas-neue-regular">Student Stress Calculator</h1>
 
       <form method="POST">
-        <div class="input-feild">
-          <div class="input">
+        <div class="input-feild iosevka-charon-regular">
+          <div class="input-group">
             <p>Rate Your Sleep Quality</p>
-            <label> <input type="radio" name="sleep-quality" value="1" required />1 </label>
-            <label> <input type="radio" name="sleep-quality" value="2" required />2 </label>
-            <label> <input type="radio" name="sleep-quality" value="3" required />3 </label>
-            <label> <input type="radio" name="sleep-quality" value="4" required />4 </label>
-            <label> <input type="radio" name="sleep-quality" value="5" required />5 </label>
+            <div class="radio-options-row">
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="sleep-quality" value="1" required id="sleep1" />
+                <label for="sleep1">1</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="sleep-quality" value="2" required id="sleep2" />
+                <label for="sleep2">2</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="sleep-quality" value="3" required id="sleep3" />
+                <label for="sleep3">3</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="sleep-quality" value="4" required id="sleep4" />
+                <label for="sleep4">4</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="sleep-quality" value="5" required id="sleep5" />
+                <label for="sleep5">5</label>
+              </div>
+            </div>
           </div>
-          <div class="input">
+          <div class="input-group">
             <p>How many times a week do you suffer Headaches?</p>
-            <label> <input type="radio" name="headaches" value="1" required />1 </label>
-            <label> <input type="radio" name="headaches" value="2" required />2 </label>
-            <label> <input type="radio" name="headaches" value="3" required />3 </label>
-            <label> <input type="radio" name="headaches" value="4" required />4 </label>
-            <label> <input type="radio" name="headaches" value="5" required />5 </label>
+            <div class="radio-options-row">
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="headaches" value="1" required id="head1" />
+                <label for="head1">1</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="headaches" value="2" required id="head2" />
+                <label for="head2">2</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="headaches" value="3" required id="head3" />
+                <label for="head3">3</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="headaches" value="4" required id="head4" />
+                <label for="head4">4</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="headaches" value="5" required id="head5" />
+                <label for="head5">5</label>
+              </div>
+            </div>
           </div>
-          <div class="input">
+          <div class="input-group">
             <p>How would you Rate your Academic Performance?</p>
-            <label> <input type="radio" name="academic-performance" value="1" required />1 </label>
-            <label> <input type="radio" name="academic-performance" value="2" required />2 </label>
-            <label> <input type="radio" name="academic-performance" value="3" required />3 </label>
-            <label> <input type="radio" name="academic-performance" value="4" required />4 </label>
-            <label> <input type="radio" name="academic-performance" value="5" required />5 </label>
+            <div class="radio-options-row">
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="academic-performance" value="1" required id="acad1" />
+                <label for="acad1">1</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="academic-performance" value="2" required id="acad2" />
+                <label for="acad2">2</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="academic-performance" value="3" required id="acad3" />
+                <label for="acad3">3</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="academic-performance" value="4" required id="acad4" />
+                <label for="acad4">4</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="academic-performance" value="5" required id="acad5" />
+                <label for="acad5">5</label>
+              </div>
+              </div>
+            </div>
           </div>
-          <div class="input">
+          <div class="input-group">
             <p>Rate Your Study Load</p>
-            <label> <input type="radio" name="study-load" value="1" required />1 </label>
-            <label> <input type="radio" name="study-load" value="2" required />2 </label>
-            <label> <input type="radio" name="study-load" value="3" required />3 </label>
-            <label> <input type="radio" name="study-load" value="4" required />4 </label>
-            <label> <input type="radio" name="study-load" value="5" required />5 </label>
+            <div class="radio-options-row">
+              <div class="radio-tile-wrapper">
+                <input id="study1" type="radio" name="study-load" value="1" required />
+                <label for="study1">1</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="study-load" value="2" required id="study 2" />
+                <label for="study2">2</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="study-load" value="3" required id="study3" />
+                <label for="study3">3</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="study-load" value="4" required id="study4" />
+                <label for="study4">4</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="study-load" value="5" required id="study5" />
+                <label for="study5">5</label>
+              </div>
+            </div>
           </div>
-          <div class="input">
+          <div class="input-group">
             <p>How many time a week do practice Extracurricular Activities</p>
-            <label> <input type="radio" name="extracurricular" value="1" required />1 </label>
-            <label> <input type="radio" name="extracurricular" value="2" required />2 </label>
-            <label> <input type="radio" name="extracurricular" value="3" required />3 </label>
-            <label> <input type="radio" name="extracurricular" value="4" required />4 </label>
-            <label> <input type="radio" name="extracurricular" value="5" required />5 </label>
+            <div class="radio-options-row">
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="extracurricular" value="1" required id="extra1" />
+                <label for="extra1">1</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="extracurricular" value="2" required id="extra2" />
+                <label for="extra2">2</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="extracurricular" value="3" required id="extra3" />
+                <label for="extra3">3</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="extracurricular" value="4" required id="extra4" />
+                <label for="extra4">4</label>
+              </div>
+              <div class="radio-tile-wrapper">
+                <input type="radio" name="extracurricular" value="5" required id="extra5" />
+                <label for="extra5">5</label>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="submit-data">
-          <input type="submit" value="Calculate Stress" />
+          <input id="submit-btn" class="space-mono-regular" type="submit" value="Calculate Stress" />
         </div>
       </form>
     </div>

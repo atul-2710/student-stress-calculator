@@ -1,54 +1,183 @@
+/* ==========================================================================
+   1. DESIGN SYSTEM VARIABLES & RESET
+   ========================================================================== */
+:root {
+  --color-polar-night: #0b1d3a;
+  --color-deep-glacier: #2c5c8f;
+  --color-frostbite: #7db4d6;
+  --color-winter-cyan: #c4e8f5;
+  --color-arctic-snow: #f4f9fa;
+
+  /* Dynamic Result Colors*/
+  --color-success: #2e7d32;
+  --color-success-bg: #e8f5e9;
+  --color-danger: #c62828;
+  --color-danger-bg: #ffebee;
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* Base Font Definitions */
+.space-mono-regular {
+  font-family: "Space Mono", monospace;
+}
+.iosevka-charon-regular {
+  font-family: "Iosevka Charon", monospace;
+  font-weight: 400;
+}
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   2. GLOBAL LAYOUT (Centered Card)
+   ========================================================================== */
 body {
-  background-color: #0b1d3a;
+  background-color: var(--color-polar-night);
+  font-family: "Space Mono", monospace;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 20px;
 }
 
+/* ==========================================================================
+   3. APP CONTAINER
+   ========================================================================== */
 .container {
-  background-color: #f4f9fa;
-  border: #7db4d6, 0.4rem, solid;
+  background-color: var(--color-arctic-snow);
+  border: 0.4rem solid var(--color-frostbite);
   border-radius: 1rem;
-  padding: 0.5rem;
+  padding: 2rem;
   margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .container h1 {
-  color: #0b1d3a;
-  padding: 0.5rem;
-  margin: 1rem;
-  background-color: #c4e8f5;
+  color: var(--color-polar-night);
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--color-winter-cyan);
   border-radius: 0.5rem;
   text-align: center;
 }
 
 .container form {
-  padding: 0.5rem;
-  margin: 1rem;
-  background-color: #c4e8f5;
+  padding: 1rem;
+  background-color: var(--color-winter-cyan);
   border-radius: 0.5rem;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-.input {
+/* ==========================================================================
+   4. FORM INPUT FIELDS
+   ========================================================================== */
+
+/* The outer container holding the label and the row of options */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+/* Container holding just the radio chips horizontally */
+.radio-options-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  gap: 8px;
+  background-color: var(--color-arctic-snow);
+  padding: 6px;
+  border-radius: 8px;
+  border: 2px solid var(--color-frostbite);
 }
 
-.input p {
-  padding: 0.5rem;
-  margin: 1rem;
+/* Individual option wrapper */
+.radio-tile-wrapper {
+  flex: 1; /* Ensures all option buttons are exactly the same width */
+  position: relative;
 }
 
-.input label {
-  padding: 0.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+/* 1. HIDE THE NATIVE UGLY BROWSER CIRCLE */
+.radio-tile-wrapper input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 2; /* Sits above the text box so it's fully clickable */
+}
+
+/* 2. STYLED THE CUSTOM PRINTED LABELS TO LOOK LIKE ICE CHIPS */
+.radio-tile-wrapper label {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  background-color: var(--color-pure-white);
+  color: var(--color-polar-night);
+  border-radius: 6px;
+  font-size: 1rem;
   font-weight: bold;
+  font-family: inherit;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.radio-tile-wrapper:hover label {
+  background-color: var(--color-winter-cyan);
+  color: var(--color-deep-glacier);
+}
+
+/* 3. THE MAGIC EFFECT: Style the label when its sibling radio input is :checked */
+.radio-tile-wrapper input[type="radio"]:checked + label {
+  background-color: var(--color-deep-glacier);
+  color: var(--color-arctic-snow);
+  box-shadow: 0 4px 12px rgba(44, 92, 143, 0.3);
+}
+
+/* Active focus outline for accessibility when using key tabs */
+.radio-tile-wrapper input[type="radio"]:focus-visible + label {
+  border-color: var(--color-polar-night);
+}
+
+/* ==========================================================================
+   5. Submit Button Logic
+   ========================================================================== */
+.submit-data {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+#submit-btn {
+  background-color: var(--color-deep-glacier);
+  color: var(--color-arctic-snow);
+  padding: 0.8rem 2rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: 0.2rem solid var(--color-deep-glacier); /* Fixed comma syntax error */
+  border-radius: 0.5rem;
+  width: 100%; /* Spans button cleanly across the form width */
+  transition: all 0.3s ease; /* Smooth fade effect on hover */
+}
+
+#submit-btn:hover {
+  background-color: var(--color-arctic-snow);
+  color: var(--color-deep-glacier);
+  border-color: var(--color-deep-glacier);
+  cursor: pointer;
+  transform: translateY(-2px); /* Sleek modern lift effect */
 }

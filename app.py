@@ -18,7 +18,7 @@ def home():
 
         prediction=model.predict(X)
         stress=prediction[0]
-        return jsonify({'stress_prediction' : stress})
+        return jsonify({'stress_prediction' : int(stress)})
     return render_template('index.html')
         
 
